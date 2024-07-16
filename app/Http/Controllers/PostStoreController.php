@@ -14,7 +14,7 @@ class PostStoreController extends Controller
         ]);
 
         $request->user()->posts()->create([
-            'image' => $request->file('image')->store('posts'),
+            'image' => $request->file('image')->store('posts', 'public'),
             'description' => $request->description,
             'is_published' => true,
         ]);
